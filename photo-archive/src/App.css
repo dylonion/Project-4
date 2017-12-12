@@ -1,28 +1,494 @@
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+li {
+  list-style: none;
+}
+ul {
+  margin:0;
+  padding:0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.nodisplay {
+  display:none;
+  flex: 1;
+}
+/*=====Persistent static navbar=====*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: black;
+  color:white;
+}
+
+header a {
+  text-decoration: none;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+header span {
+  cursor: pointer;
+}
+footer {
+  background-color: black;
+  color:white;
+  padding: 10px;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+}
+.header-dropdown {
+  position: absolute;
+  color:black;
+  left:85%;
+  top:7%;
+  border:1px solid black;
+  background-color: white;
+}
+.header-dropdown li {
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+.header-dropdown li:hover {
+  background-color: black;
+  color:white;
+}
+/*==============================*/
+
+/*======Hero image==============*/
+.hero {
+  padding: 15vw;
+  background-color: grey;
+}
+.hero div {
+  padding: 15px;
+  background-color: white;
+}
+/*==============================*/
+
+/*==========Form ==============*/
+.loginform {
+  display: flex;
+  flex-direction: column;
+  padding: 0 350px;
+}
+.UserDetails form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 350px;
+}
+.biz-form form {
+  display: flex;
+  flex-direction: column;
+}
+.loginform input {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.biz-form input[type="text"] {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+.UserDetails form input {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+form input {
+  border:none;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input[type='submit'], .backBtn {
+  border:none;
+  background-color: whitesmoke;
+  color: black;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
+input[type='submit']:hover {
+  background-color: #4CAF50;
+  color: whitesmoke;
+}
+
+.backBtn {
+  font-size: inherit;
+  font-weight: inherit;
+  margin:10px 0;
+  font-family: inherit;
+}
+
+.backBtn:hover {
+  background-color: #4CAF50;
+  color: whitesmoke;
+}
+/* input[type='submit'], .search-form-button {
+  border:none;
+  background-color: #7dff7d;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 3px;
+  margin: 0 3px;
+  vertical-align: top;
+  font-family: inherit; */
+
+label {
+  text-align: left;
+}
+#switch-login {
+  display: inline-block;
+  cursor: pointer;
+  color: #677eff;
+}
+
+.title {
+  margin-top: 45px;
+}
+/*============Client Page==================*/
+
+.client-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+/*=======User Info==============*/
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  text-align: left;
+  margin: 10px;
+  background-color: #ebecee;
+  padding:20px;
+  border-radius: 3px;
+}
+
+.user-info div {
+  margin: 5px;
+}
+
+.user-info h1 {
+  margin:0;
+}
+
+.account-details {
+  text-align: center;
+}
+
+.client-details-wrap {
+  display: flex;
+}
+
+.hidebutton:hover {
+  background-color: #ffe7a3;
+}
+#hidebutton {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+#hidebutton:hover {
+  background-color: #ffe7a3;
+
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edit-button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-button button {
+  background-color: #5cc4c6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*=======Client Tasks===========*/
+
+.client-tasks {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  background-color: #ebecee;
+  margin: 10px;
+}
+
+.task {
+  display: flex;
+  border: 2px solid black;
+  height: 50px;
+}
+
+#task-name {
+  flex: 2;
+  text-align: left;
+}
+
+#task-date {
+  flex: 1;
+  text-align: left;
+}
+
+/*==============Biz Page================*/
+
+.biz-page {
+  margin: 40px 0 0 0;
+  display: flex;
+  overflow: scroll;
+}
+
+/*==============Biz Page Left================*/
+.business-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.biz-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: left;
+  background-color: #EBECEE;
+  border-radius: 4px;
+}
+
+.biz-info div {
+  margin: 5px;
+}
+
+.biz-account-details {
+  text-align: center;
+}
+
+.biz-details-wrap {
+  display: flex;
+}
+
+.biz-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*=========Focus Groups=========*/
+
+.show-groups {
+  display: flex;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.focus-group-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-group {
+  margin: 10px;
+  background-color: black;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.focus-group li {
+  background-color: white;
+  border:1px solid black;
+  margin-bottom: 3px;
+  padding:3px;
+}
+
+.focus-group ul {
+  margin: 10px;
+}
+
+.focus-group-title {
+  background-color: #5CC4C6;
+  font-size: 20px;
+}
+
+.client-details-container {
+  flex: 1;
+}
+
+/*==============================*/
+
+/*==============Biz Page Right================*/
+
+.business-right {
+  flex: 1;
+  text-align: left;
+  background-color: white;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.boxy {
+  background: lightslategray;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  border-radius: 4px;
+  top: -350px;
+  left: 250px;
+}
+
+/*==========Search Results=======*/
+
+.search-form {
+  color: white;
+  padding:20px;
+  box-shadow: 0 10px 6px 6px
+}
+.userthings form {
+  width: 100%;
+}
+
+.search-form label {
+  padding: 3px;
+  margin: 3px;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
+
+.buttondiv {
+  display: flex;
+  justify-content: space-between;
+  margin:10px 0;
+}
+
+.preview-count {
+  text-align: right;
+}
+
+.buttondiv button {
+  font-size: 16px;
+  border: none;
+}
+
+.userthings {
+  display: flex;
+}
+
+.search-category span :hover {
+  background-color: lightblue;
+}
+
+.search-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.search-results {
+  max-height: 300px;
+  /* margin-bottom: 40px; */
+  background-color: #cacaca;
+  display: flex;
+}
+
+.results-list li {
+  padding:5px 20px 5px 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  transition: left .3s ease-out;
+  left:0;
+  color:black;
+}
+
+.results-list {
+  overflow-y:scroll;
+  background-color: #798898;
+  overflow-x:hidden;
+}
+
+.results-list li:hover {
+  left:20px;
+}
+
+.client-profile h3 {
+  margin:10px;
+  text-align: center;
+}
+
+.client-details {
+  margin:5px;
+}
+
+.client-options {
+  text-align: right;
+  font-size: small;
+  margin-right: 20px;
+}
+
+.client-profile li {
+  background-color: inherit;
+  font-size: small;
+  border:none;
+  margin:0;
+  color:black;
+}
+.search-errorfield {
+  margin:10px;
+  padding: 5px;
+  background-color: #ffa7a7;
+  border:1px solid red;
+  border-radius: 3px;
+}
+
+
+/*==============================*/
